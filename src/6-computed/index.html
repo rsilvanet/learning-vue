@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My VueJS App</title>
+        <script src="https://unpkg.com/vue"></script>
+        <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css" />
+    </head>
+    <body>
+        <div id="app">
+            <span>Change the text</span>
+            <br><br>
+            <input v-model="text" placeholder="Text" />
+            <br><br>
+            <span>Normal: {{text}}</span>
+            <br><br>
+            <span>Lower: {{lowerText}}</span>
+        </div>
+        <script>
+            
+            var app = new Vue({
+              el: '#app',
+              data: {
+                  text: ''
+              },
+              computed: {
+                  lowerText() {
+                      return this.text.toLowerCase();
+                  }
+              }
+            });
+        </script>
+    </body>
+</html>
