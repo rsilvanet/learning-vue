@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My VueJS App</title>
+        <script src="https://unpkg.com/vue"></script>
+        <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <div>Loaded</div>
+            <br>
+            <button class="vue-btn"v-on:click="increment()">Increment</button>
+            <br>
+            <span>Count: {{count}}</span>
+        </div>
+        <script>
+            var app = new Vue({
+              el: '#app',
+              data: {
+                count: 0
+              },
+              methods: {
+                increment() {
+                    this.count++;
+                }
+              },
+              created() {
+                alert('Created');
+              },
+              mounted() {
+                alert('Mounted');
+              },
+              updated() {
+                alert('Count updated to ' + this.count);
+              }
+            });
+        </script>
+    </body>
+</html>
