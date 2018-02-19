@@ -15,7 +15,7 @@
         },
         methods: {
             fetchCharacter() {
-                fetch('https://swapi.co/api/people', {
+                fetch('https://swapi.co/api/people/1', {
                     method: 'GET'
                 })        
                 .then(response => response.json())
