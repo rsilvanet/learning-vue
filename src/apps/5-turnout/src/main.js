@@ -3,6 +3,7 @@ import App from './components/App.vue';
 import VueRouter from 'vue-router';
 import Dashboard from './components/Dashboard.vue';
 import Signin from './components/Signin.vue';
+import Signup from './components/Signup.vue';
 import { FirebaseApp } from './firebase-app';
 import Store from './store';
 
@@ -12,7 +13,8 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         { path: '/dashboard', component: Dashboard },
-        { path: '/signin', component: Signin }
+        { path: '/signin', component: Signin },
+        { path: '/signup', component: Signup },        
     ]
 });
 

@@ -1,6 +1,6 @@
 <template>
     <div class="form-inline">
-        <h3>Sign In</h3>
+        <h3>Sign Up</h3>
         <div class="form-group">
             <input 
                 type="text" 
@@ -17,12 +17,12 @@
             <br><br>
             <button 
                 class="btn btn-primary"
-                v-on:click="signIn">
-                Sign In
+                v-on:click="signUp">
+                Sign Up
             </button>
             <br>
-            <router-link to="/signup">Not a user?</router-link>
-            <br>
+            <router-link to="/signin">Already a user?</router-link>
+            <br>            
             <p>{{error.message}}</p>
             <br>
         </div>
@@ -40,16 +40,16 @@
                 error: {
                     message: ''
                 }
-            }
+            };
         },
         methods: {
-            signIn() {
+            signUp() {
                 FirebaseApp.auth()
-                    .signInWithEmailAndPassword(this.email, this.password)
+                    .createUserWithEmailAndPassword(this.email, this.password)
                     .catch(error => {
                         this.error = error;
                     });
             }
         }
-    }
+    };
 </script>
